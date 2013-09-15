@@ -8,7 +8,9 @@ Pod::Spec.new do |s|
   s.source   = { :git => 'https://github.com/mk/SocketShuttle.git', :tag => '0.3' }
   s.source_files = 'SocketShuttle/*.{h,m,c}'
   s.requires_arc = true
+  
   s.ios.deployment_target = '5.0'
+  s.osx.deployment_target = '10.8'
 
   s.dependency "SocketRocket", "~> 0.2.0"
   s.dependency "Reachability", "~> 3.1"
