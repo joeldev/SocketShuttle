@@ -34,10 +34,15 @@
 
 @implementation KATSocketShuttle
 
--(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>)delegate connectConditions:(KATSocketConnectCondition)connectConditions {
-    if((self = [super init])) {
-    	[self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
+-(id)init {
+    if ((self = [super init])) {
+        [self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
+    }
+    return self;
+}
 
+-(id)initWithRequest:(NSURLRequest *)request delegate:(id<KATSocketShuttleDelegate>)delegate connectConditions:(KATSocketConnectCondition)connectConditions {
+    if((self = [self init])) {
 		_request = request;
 		_delegate = delegate;
         _connectConditions = connectConditions;
