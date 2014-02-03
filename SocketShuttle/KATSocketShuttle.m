@@ -36,7 +36,7 @@
 
 -(id)init {
     if ((self = [super init])) {
-        [self addObserver:self forKeyPath:@"self.socketState" options:0 context:NULL];
+        [self addObserver:self forKeyPath:@"socketState" options:0 context:NULL];
     }
     return self;
 }
@@ -86,7 +86,7 @@
 
 - (void)dealloc {
     [self cancelConnectingTimer];
-    [self removeObserver:self forKeyPath:@"self.socketState"];
+    [self removeObserver:self forKeyPath:@"socketState"];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,7 +172,7 @@
 #pragma mark - Internal
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if([keyPath isEqualToString:@"self.socketState"]) {
+	if([keyPath isEqualToString:@"socketState"]) {
 		[self cancelConnectingTimer];
 	}
 }
