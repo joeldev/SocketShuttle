@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.source_files = 'SocketShuttle/*.{h,m,c}'
   s.requires_arc = true
   
-  s.ios.deployment_target = '5.0'
-  s.osx.deployment_target = '10.8'
+  s.ios.deployment_target = '6.1'
+  s.osx.deployment_target = '10.9'
 
-  s.dependency "SocketRocket", "~> 0.2.0"
+  s.dependency "SocketRocket", "~> 0.3.1-beta2"
   s.dependency "Reachability", "~> 3.1"
 end
