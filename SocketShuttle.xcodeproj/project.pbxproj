@@ -403,7 +403,6 @@
 		4DE9EB74170D870A005B295E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/KATSocketShuttle.dst;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
@@ -414,7 +413,6 @@
 		4DE9EB75170D870A005B295E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/KATSocketShuttle.dst;
 				HEADER_SEARCH_PATHS = "${SRCROOT}/Third-Party/SocketRocket/";
 				PRODUCT_NAME = SocketShuttle;
 				SKIP_INSTALL = YES;
@@ -449,10 +447,12 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "SocketShuttleOSX/SocketShuttleOSX-Info.plist";
-				LD_DYLIB_INSTALL_NAME = "@loader_path/../$(EXECUTABLE_PATH)";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = SocketShuttle;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -482,10 +482,12 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "SocketShuttleOSX/SocketShuttleOSX-Info.plist";
-				LD_DYLIB_INSTALL_NAME = "@loader_path/../$(EXECUTABLE_PATH)";
+				INSTALL_PATH = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = SocketShuttle;
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -518,6 +520,7 @@
 				905AF9C417BB3F40002FDE4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
